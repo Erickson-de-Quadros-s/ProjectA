@@ -64,10 +64,28 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Author - [Erickson de Quadros](https://github.com/Erickson-de-Quadros-s)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
   Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+
+
+  src
+├── clients
+│   ├── controllers
+│   │   └── clients.controller.ts
+│   ├── dto
+│   │   └── create-client.dto.ts
+│   ├── entities
+│   │   └── client.entity.ts
+│   ├── services
+│   │   └── clients.service.ts
+│   └── clients.module.ts
+└── main.ts
+
+
