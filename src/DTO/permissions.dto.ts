@@ -1,4 +1,5 @@
-import { IsNotEmpty, IsString, IsNumber,  } from "class-validator";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { IsNotEmpty, IsString, IsNumber, } from "class-validator";
 
 export class PermissionDTO {
     @IsNotEmpty()

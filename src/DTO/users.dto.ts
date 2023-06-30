@@ -1,6 +1,7 @@
-import { IsNotEmpty, IsString, IsNumber, MaxLength, MinLength, ArrayMinSize, Min } from "class-validator";
-import { Type } from "class-transformer";
-import { PermissionDTO } from "./permissions.dto"
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { IsNotEmpty, IsString, IsNumber, MaxLength, MinLength, ArrayMinSize, Min } from "class-validator/";
+//import { Type } from "class-transformer";
+//import { PermissionDTO } from "./permissions.dto"
 
 
 export class UserDTO {
@@ -16,8 +17,8 @@ export class UserDTO {
     @IsString()
     @MaxLength(50)
     @MinLength(2)
-    readonly name:  string;
-    
+    readonly name: string;
+
     @IsNotEmpty()
     @IsString()
     readonly adress: string;
@@ -26,9 +27,11 @@ export class UserDTO {
     @Min(1)
     readonly age: number;
 
-    @IsNotEmpty()
-    @ArrayMinSize(1)
-    @IsNotEmpty({each: true})
-    @Type(() => PermissionDTO)
-    readonly permission: PermissionDTO;
+    // @IsNotEmpty()
+    // @ArrayMinSize(1)
+    //@IsNotEmpty({ each: true })
+    //@Type(() => PermissionDTO)
+    // readonly permission: PermissionDTO;
+    //readonly permission: string;
+
 }
