@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
 
 import { PermissionDTO } from "src/DTO/permissions.dto";
 import { PermissionRepository } from "src/Mongo/Repository/permission.repository";
@@ -16,6 +16,10 @@ export class PermissionService {
     }
     async GetAllPermissions(): Promise<PermissionDTO[]> {
         console.log("Get all Permissions called");
-        return await this.permissionRepository.getAllPermission();
+        const allPermissions = await this.permissionRepository.getAllPermission();
+        if (allPermissions.length)
+            throw new BadRequestException('There are no permissions registred yet');
+
+        return allPermissions;
     }
 }

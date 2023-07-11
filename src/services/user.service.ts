@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { BadRequestException } from "@nestjs/common";
 import { Injectable } from "@nestjs/common";
 
 import { UserDTO } from "src/DTO/users.dto";
 import { User } from "src/Mongo/Interfaces/user.Interface";
-
 import { UserRepository } from "src/Mongo/Repository/user.repository";
 
 @Injectable()
@@ -20,7 +20,11 @@ export class UserService {
 
     async getAllUsers(): Promise<User[]> {
         console.log("Get all");
-        return await this.userRepository.getAllUsers();
+        const allUsers = await this.userRepository.getAllUsers();
+        if (allUsers.length)
+            throw new BadRequestException('There are no User registred yet');
+
+        return allUsers;
     }
 
     UpdateUser(): string {
